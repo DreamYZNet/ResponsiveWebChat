@@ -1,0 +1,33 @@
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/scripts/message_ajax.js"></script>
+
+    Messages:
+    <table style="width:100%; border:1px solid black;"><tr><td>
+        <div id="messages" style="overflow:auto; height:19.2em; line-height: 1.2em;"></div>
+    </td></tr></table>
+
+    <!--message form-->
+    <form id="message_form" action="/scripts/send_message.php" method="post">
+        <table style="width:100%"><tr>
+            <td><textarea id="message_text" class="auto_height" name="message" placeholder="Send a message..." cols="5" rows="0" style="height:22px; width:100; padding-top: 0px; padding-bottom:0px;"></textarea></td>
+            <td><input type="submit" value="Send"></td>
+        </tr><tr>
+            <td><input type="text" name="username" placeholder="Username" maxlength=16 style="height:22px;"></td>
+        </tr><tr>
+            <td><input type="password" name="password" placeholder="Password (not your real one)" maxlength=16 style="height:22px;"></td>
+        </tr></table>
+    </form>
+    <br><br><br>
+    
+    Features:<br>
+    - Secure, try &lt;script&gt;alert('XSS');&lt;/script&gt; etc<br>
+    - Message area stays at bottom, unless user scrolls up<br>
+    - Typing a long message expands the text box<br>
+    - Shift+enter makes a new line, but enter submits the message<br>
+    - Page loads new messages automagically through the power of ajax<br>
+    - Username and password implemented to reserve usernames<br>
+    - All data is stored in an SQL database, in a users table and a messages table<br>
+    - Only last 30 messages are loaded on page refresh<br>
+
+</body>
